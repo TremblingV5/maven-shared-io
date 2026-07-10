@@ -47,7 +47,7 @@ public class SingleTargetMapping implements SourceMapping {
 
     /** {@inheritDoc} */
     public Set<File> getTargetFiles(File targetDir, String source) throws InclusionScanException {
-        if (!source.endsWith(sourceSuffix)) {
+        if (sourceSuffix == null || source == null || !source.endsWith(sourceSuffix)) {
             return Collections.<File>emptySet();
         }
 
