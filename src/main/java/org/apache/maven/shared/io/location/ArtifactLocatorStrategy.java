@@ -163,8 +163,8 @@ public class ArtifactLocatorStrategy implements LocatorStrategy {
                         e);
             }
         } else {
-            messageHolder.addMessage("Invalid artifact specification: \'" + locationSpecification
-                    + "\'. Must contain at least three fields, separated by \':\'.");
+            messageHolder.addMessage("Invalid artifact specification: '" + locationSpecification
+                    + "'. Must contain at least three fields, separated by ':'.");
         }
 
         return location;
