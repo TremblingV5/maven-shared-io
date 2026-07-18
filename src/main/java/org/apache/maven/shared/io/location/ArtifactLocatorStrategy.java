@@ -158,11 +158,11 @@ public class ArtifactLocatorStrategy implements LocatorStrategy {
                     messageHolder.addMessage(
                             "Supposedly resolved artifact: " + artifact.getId() + " does not have an associated file.");
                 }
-            } catch (ArtifactResolutionException e) {
-                messageHolder.addMessage(
-                        "Failed to resolve artifact: " + artifact.getId() + " for location: " + locationSpecification,
-                        e);
             } catch (ArtifactNotFoundException e) {
+                messageHolder.addMessage(
+                        "Failed to find artifact: " + artifact.getId() + " for location: " + locationSpecification,
+                        e);
+            } catch (ArtifactResolutionException e) {
                 messageHolder.addMessage(
                         "Failed to resolve artifact: " + artifact.getId() + " for location: " + locationSpecification,
                         e);
