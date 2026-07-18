@@ -58,7 +58,9 @@ public class URLLocation extends FileLocation {
     /** {@inheritDoc} */
     protected void initFile() throws IOException {
         if (unsafeGetFile() == null) {
-            File tempFile = Files.createTempFile(tempFilePrefix, tempFileSuffix).toFile();
+            String prefix = tempFilePrefix != null ? tempFilePrefix : "url";
+            String suffix = tempFileSuffix != null ? tempFileSuffix : ".tmp";
+            File tempFile = Files.createTempFile(prefix, suffix).toFile();
 
             if (tempFileDeleteOnExit) {
                 tempFile.deleteOnExit();
